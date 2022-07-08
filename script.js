@@ -54,15 +54,10 @@ $(document).ready(() => {
 		};
 	}
 
-	const $addDen = $('.add-den');
-	const $subDen = $('.sub-den');
-	const $addNum = $('.add-num');
-	const $subNum = $('.sub-num');
-
-	$addDen.on('click', function() {btnClick(1);});
-	$subDen.on('click', function() {btnClick(2);});
-	$addNum.on('click', function() {btnClick(3);});
-	$subNum.on('click', function() {btnClick(4);});
+	$('.add-den').on('click', function() {btnClick(1);});
+	$('.sub-den').on('click', function() {btnClick(2);});
+	$('.add-num').on('click', function() {btnClick(3);});
+	$('.sub-num').on('click', function() {btnClick(4);});
 
 	// Draws rectangle
 	function btnClick(index) {
@@ -75,7 +70,6 @@ $(document).ready(() => {
 	//Checks rectangle
 	$('.checker').on('click', () => {
 		if (_randNum / _randDen == _num / _den) {
-			
 			$('.full').css({backgroundColor: '#0F0'}).animate({
 				height: 210,
 				width: ((400 / _den) * _num * 0.2) + (400 / _den) * _num
@@ -91,17 +85,14 @@ $(document).ready(() => {
 			$('.full').css({backgroundColor: '#F00'}).shake();
 	})
 
-	// Shake function + return to value before
+	// Shake function + return to before value
 	jQuery.fn.shake = function(interval,distance,times){
-		interval = typeof interval == "undefined" ? 100 : interval;
-		distance = typeof distance == "undefined" ? 10 : distance;
-		times = typeof times == "undefined" ? 3 : times;
 		var jTarget = $(this);
 		jTarget.css('position','relative');
-		for(var iter=0;iter<(times+1);iter++){
-		   jTarget.animate({ left: ((iter%2==0 ? distance : distance*-1))}, interval);
+		for(var iter=0; iter < 4; iter++){
+			jTarget.animate({ left: ((iter%2 == 0 ? 10 : 10 * -1))}, 100);
 		}
-		return jTarget.animate({ left: 0},interval, function() {
+		return jTarget.animate({left: 0}, 100, function() {
 			$('.full').css({
 				backgroundColor: '#000',
 				height: 200,

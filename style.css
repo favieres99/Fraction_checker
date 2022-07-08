@@ -18,3 +18,7 @@
 .hidden {
 	display: none;
 }
+
+.button:hover {
+	border: red 1px dotted;
+}
