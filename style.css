@@ -1,0 +1,20 @@
+.button {
+	border: 1px solid;
+	text-align: center;
+}
+
+.rectangle {
+	border: solid blue 2px;
+	width: 400px;
+	height: 200px;
+}
+
+.full {
+	width: 400px;
+	height: 200px;
+	background-color: #000;
+}
+
+.hidden {
+	display: none;
+}
